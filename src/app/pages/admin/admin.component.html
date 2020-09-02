@@ -1,0 +1,39 @@
+<div class="page-content">
+    <div class="row">
+        <div>
+            <div class="mat-elevation-z8">
+                <mat-toolbar color="primary">
+                    <span>Kitchens</span>
+                    <span class="toolbar-spacer"></span>
+                    <button mat-icon-button aria-label="Add kitchen" (click)="showNewKitchen()">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </mat-toolbar>
+                <div class="Kitchens-list">
+                    <div *ngFor="let Kitchen of Kitchens">
+                        <button mat-button (click)="showRestaurants(Kitchen)">{{Kitchen.name}}</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <div class="mat-elevation-z8" *ngIf="selected.id != 0">
+                <mat-toolbar color="primary">
+                    <span>restaurants of {{selected.name}}</span>
+                    <span class="toolbar-spacer"></span>
+                    <button mat-icon-button aria-label="Add Restaurant" (click)="showNewRestaurant()">
+                        <mat-icon>add</mat-icon>
+                    </button>
+                </mat-toolbar>
+                <div class="Kitchens-list">
+                    <div *ngFor="let restaurant of restaurants">
+                        <button mat-button (click)="showApps(restaurant.id)">{{restaurant.name}}</button>
+                    </div>
+                    <div *ngIf="restaurants.length == 0">
+                        <button mat-button (click)="showNewRestaurant()">Add New Restaurant!!</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

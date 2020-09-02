@@ -1,0 +1,50 @@
+<mat-accordion>
+    <mat-expansion-panel *ngFor="let app of apps">
+        <mat-expansion-panel-header color="primary">
+            <mat-panel-title>
+                {{app.name}}
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <mat-form-field class="full-width">
+            <mat-label>Client Id</mat-label>
+            <input matInput [(ngModel)]="app.client_id">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Client Secret</mat-label>
+            <input matInput [(ngModel)]="app.client_secret">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Grant Type</mat-label>
+            <input matInput [(ngModel)]="app.grant_type">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Username</mat-label>
+            <input matInput [(ngModel)]="app.username">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Password</mat-label>
+            <input matInput [(ngModel)]="app.password">
+        </mat-form-field>
+
+        <mat-form-field class="full-width">
+            <mat-label>Merchant Id</mat-label>
+            <input matInput [(ngModel)]="app.merchant_id">
+        </mat-form-field>
+
+        <div class="text-right">
+            <button mat-raised-button color="primary" (click)="create(app)" *ngIf="app.id == null">Save</button>
+            <button mat-raised-button color="primary" (click)="update(app)" *ngIf="app.id != null">Update</button>
+        </div>
+
+   
+    </mat-expansion-panel>
+</mat-accordion>
+
+<div class="text-right mtop">
+    <button mat-raised-button (click)="onNoClick()">Close</button>
+</div>

@@ -1,1 +1,213 @@
 /* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.page-content {
+    padding: 16px;
+}
+
+.mtop {
+    margin-top: 20px;
+}
+
+.text-right {
+    text-align: right;
+}
+.text-left {
+    text-align: left;
+}
+
+mat-drawer {
+    max-width: 380px;
+}
+
+.app-logo {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.uber-eats {
+    background-image: url('/assets/images/uber-eats.png');
+}
+
+.ifood {
+    background-image: url('/assets/images/ifood.png');
+}
+
+.sin-delantal {
+    background-image: url('/assets/images/sin-delantal.png');
+}
+
+.rappi {
+    background-image: url('/assets/images/rappi.png');
+}
+
+mat-drawer-container {
+    height: calc(100% - 64px);
+}
+mat-card.order-card {
+    margin: 10px;
+    width: 100%;
+    padding-right: 0;
+    padding-bottom: 10px;
+    cursor: pointer;
+
+    mat-card-content {
+        max-height: 85px;
+        overflow: auto;
+        margin-top: 10px;
+        &::-webkit-scrollbar-track
+        {
+            -webkit-box-shadow: inset 0 0 2px rgba(0,0,0,0.3);
+            background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar
+        {
+            width: 4px;
+            background-color: #F5F5F5;
+        }
+        &::-webkit-scrollbar-thumb
+        {
+            background-color: #000000;
+            border: 2px solid #555555;
+        }
+        p,
+        h4 {
+            margin: 5px 0;
+        }
+    }
+    mat-card-footer {
+        margin-right: 16px;
+        margin-left: 0;
+        text-align: right;
+        padding-top: 16px;
+        h4 {
+            margin-top: 0;
+        }
+    }
+}
+
+table {
+    width: 100%;
+}
+
+.order-details {
+    padding-left: 30px;
+    .title-order {
+        margin-bottom: 0px;
+    }
+    .subtitle-order {
+        color: #9f9f9f;
+        font-size: 14px;
+        font-weight: 500;
+        &.black-color {
+            color: #000;
+            font-weight: bold;
+        }
+    }
+    .mat-divider {
+        margin-top: 18px;
+    }
+    .delivery-content {
+        .app-logo {
+            height: 35px;
+            width: 35px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        & > div {
+            display: inline-block;
+            vertical-align: top;
+            .title-order {
+                margin: 0;
+            }
+        }
+    }
+    .cunstomer-content {
+        .small-title-order {
+            color: #9f9f9f;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 0;
+            margin-top: 20px;
+        }
+    }
+    .order-products {
+        .product-content {
+            margin-bottom: 20px;
+            & > div {
+                display: inline-block;
+                vertical-align: top;
+                &.name-product {
+                    width: calc(100% - 100px);
+                    margin-right: 10px;
+                    h4 {
+                        margin: 0;
+                    }
+                }
+                &.quantity-product {
+                    width: 20px;
+                    margin-right: 10px;
+                }
+                &.price-product {
+                    width: 60px;
+                }
+            }
+            .observations-product {
+                font-style: italic;
+                color: #9f9f9f;
+                text-align: center;
+            }
+        }
+    }
+    .totales-content {
+        margin-top: 20px;
+        & > div {
+            display: inline-block;
+            vertical-align: top;
+            font-weight: bold;
+            &.description-total {
+                width: calc(100% - 80px);
+                margin-right: 10px;
+                margin-bottom: 10px;
+            }
+            &.total-total {
+                width: 70px;
+            }
+        }
+    }
+    .button-content {
+        margin-top: 20px;
+        text-align: center;
+        button {
+            margin-right: 15px;
+        }
+    }
+}
+
+.row {
+    display: flex;
+    
+    > div {
+        flex: 1 1 auto; /* Size of items defined inside items */
+        text-align: center;
+        padding: 8px;
+
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+
+.full-width {
+    width: 100%;
+}
